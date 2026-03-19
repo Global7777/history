@@ -6,10 +6,8 @@
     <title>История | ТТИТ — студия знаний</title>
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- SortableJS для drag & drop -->
-    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <style>
-        /* ----- СБРОС И СТИЛИ ----- */
+        /* ----- СБРОС И СТИЛИ (полностью сохранены) ----- */
         * {
             margin: 0;
             padding: 0;
@@ -230,6 +228,11 @@
             font-weight: 500;
             color: #1d2b3e;
         }
+        .video-meta {
+            font-size: 1rem;
+            color: #4f658a;
+            margin-top: 4px;
+        }
 
         .watch-link {
             background: #ffb347;
@@ -260,143 +263,6 @@
             border: 2px dashed #ffc489;
         }
 
-        .admin-footer-icon {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            z-index: 999;
-        }
-        .admin-icon {
-            background: white;
-            color: #ffb347;
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            box-shadow: 0 10px 30px -8px #ffb347, 0 0 0 2px white;
-            transition: 0.25s;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .admin-icon:hover {
-            transform: scale(1.1) rotate(8deg);
-            background: #ffb347;
-            color: white;
-            box-shadow: 0 18px 36px -10px #ff9f2f;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.3);
-            backdrop-filter: blur(8px);
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-        }
-        .modal-card {
-            background: white;
-            max-width: 520px;
-            width: 90%;
-            border-radius: 70px;
-            padding: 45px;
-            box-shadow: 0 40px 70px -20px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255, 180, 70, 0.5);
-        }
-        .modal-card h2 {
-            color: #1e2f42;
-            font-size: 2rem;
-            margin-bottom: 30px;
-        }
-        .modal-card input {
-            width: 100%;
-            padding: 16px 22px;
-            border-radius: 60px;
-            border: 1px solid #e0e8f0;
-            background: #f9fcff;
-            font-size: 1.1rem;
-            margin-bottom: 18px;
-        }
-        .modal-actions {
-            display: flex;
-            gap: 12px;
-        }
-        .modal-actions button {
-            flex: 1;
-            padding: 14px;
-            border-radius: 60px;
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-        }
-        .btn-primary { background: #ffb347; color: #1a2639; }
-        .btn-secondary { background: #eef2f7; color: #2c3f5c; }
-
-        #adminDashboard {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1500;
-            overflow: auto;
-            padding: 35px;
-        }
-        .admin-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 80px;
-            padding: 40px;
-            box-shadow: 0 35px 60px -30px rgba(0,0,0,0.3);
-            border: 2px solid #ffb85b;
-        }
-        .admin-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 35px;
-        }
-        .admin-header h2 {
-            color: #1f2f44;
-            font-size: 2.4rem;
-        }
-        .close-admin {
-            background: #ff5e5e;
-            color: white;
-            border: none;
-            border-radius: 60px;
-            padding: 16px 32px;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-        .group-badge {
-            background: #f1f6fd;
-            padding: 10px 22px;
-            border-radius: 60px;
-            color: #1e2f42;
-            font-weight: 500;
-            margin-right: 12px;
-            margin-bottom: 10px;
-            display: inline-block;
-            border: 1px solid #ffb347;
-            cursor: pointer;
-        }
-        .group-badge.active {
-            background: #ffb347;
-            color: #1a1f2c;
-        }
-        .admin-edit-area {
-            margin-top: 30px;
-            background: #f9fcff;
-            border-radius: 60px;
-            padding: 30px;
-        }
-
         footer {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
@@ -420,118 +286,23 @@
 </header>
 
 <main>
-    <!-- СЕМИНАР 1: Гражданская война -->
+    <!-- ЕДИНСТВЕННЫЙ СЕМИНАР С ВЫБОРОМ ТЕМЫ ЧЕРЕЗ ВКЛАДКИ -->
     <section class="seminar">
         <div class="seminar-header">
-            <h2><i class="fas fa-scroll"></i> Гражданская война. Периоды. Взгляд современников и историков</h2>
+            <h2><i class="fas fa-timeline"></i> Выберите семинар и тему</h2>
         </div>
-        <div class="group-tabs">
-            <button class="tab-button active" data-group="civil-group1"><i class="fas fa-1"></i> 1 этап</button>
-            <button class="tab-button" data-group="civil-group2"><i class="fas fa-2"></i> 2 этап</button>
-            <button class="tab-button" data-group="civil-group3"><i class="fas fa-3"></i> 3 этап</button>
+        <!-- Вкладки выбора СЕМИНАРА (Гражданская / Вторая мировая) -->
+        <div class="group-tabs" style="justify-content: center; border-bottom: 2px solid #ffe6c9;">
+            <button class="tab-button active" id="selectCivilBtn"><i class="fas fa-flag"></i> Гражданская война</button>
+            <button class="tab-button" id="selectWWIIBtn"><i class="fas fa-landmark"></i> Вторая мировая война</button>
         </div>
-        <div class="group-content">
-            <div class="group-panel active-panel" id="civil-group1">
-                <h3>🥇 1 этап</h3>
-                <div class="topic-note"><i class="fas fa-list"></i> причины гражданской войны, личности, ход боевых действий</div>
-                <div class="video-grid" id="grid-civil-group1"></div>
-            </div>
-            <div class="group-panel" id="civil-group2">
-                <h3>🥈 2 этап</h3>
-                <div class="topic-note"><i class="fas fa-list"></i> личности, военная интервенция, движение зеленых, Колчак</div>
-                <div class="video-grid" id="grid-civil-group2"></div>
-            </div>
-            <div class="group-panel" id="civil-group3">
-                <h3>🥉 3 этап</h3>
-                <div class="topic-note"><i class="fas fa-list"></i> личности, Врангель, польско-советская война, Крым, итоги</div>
-                <div class="video-grid" id="grid-civil-group3"></div>
-            </div>
-        </div>
-    </section>
+        <!-- Вкладки выбора ТЕМЫ (динамически через JS) -->
+        <div class="group-tabs" id="themeTabsContainer" style="padding-top: 0;"></div>
 
-    <!-- СЕМИНАР 2: Человек на войне -->
-    <section class="seminar">
-        <div class="seminar-header">
-            <h2><i class="fas fa-heart"></i> Человек на войне</h2>
-        </div>
-        <div class="group-tabs">
-            <button class="tab-button active" data-group="wwii-group1"><i class="fas fa-1"></i> Как всё начиналось</button>
-            <button class="tab-button" data-group="wwii-group2"><i class="fas fa-2"></i> Этапы ВОВ</button>
-            <button class="tab-button" data-group="wwii-group3"><i class="fas fa-3"></i> Вклад томичей</button>
-            <button class="tab-button" data-group="wwii-group4"><i class="fas fa-4"></i> Культура в годы войны</button>
-        </div>
-        <div class="group-content">
-            <div class="group-panel active-panel" id="wwii-group1">
-                <h3>📜 Как всё начиналось</h3>
-                <div class="topic-note"><i class="fas fa-list"></i> Мюнхенский пакт, личности</div>
-                <div class="video-grid" id="grid-wwii-group1"></div>
-            </div>
-            <div class="group-panel" id="wwii-group2">
-                <h3>⚔️ Этапы ВОВ</h3>
-                <div class="topic-note"><i class="fas fa-list"></i> стратегии сторон, ход, итоги (любой этап)</div>
-                <div class="video-grid" id="grid-wwii-group2"></div>
-            </div>
-            <div class="group-panel" id="wwii-group3">
-                <h3>🏔 Вклад томичей</h3>
-                <div class="topic-note"><i class="fas fa-list"></i> Томские воины в борьбе с фашизмом</div>
-                <div class="video-grid" id="grid-wwii-group3"></div>
-            </div>
-            <div class="group-panel" id="wwii-group4">
-                <h3>🎭 Культура в годы войны</h3>
-                <div class="topic-note"><i class="fas fa-list"></i> плакаты, песни, литература, кинематограф</div>
-                <div class="video-grid" id="grid-wwii-group4"></div>
-            </div>
-        </div>
+        <!-- Контент (панели тем) -->
+        <div class="group-content" id="themePanelsContainer"></div>
     </section>
 </main>
-
-<!-- Иконка входа админа -->
-<div class="admin-footer-icon">
-    <a href="#" id="adminLoginBtn" class="admin-icon"><i class="fas fa-crown"></i></a>
-</div>
-
-<!-- МОДАЛКА ВХОДА -->
-<div id="loginModal" class="modal">
-    <div class="modal-card">
-        <h2><i class="fas fa-lock"></i> Вход для куратора</h2>
-        <input type="text" id="loginUser" placeholder="Логин" value="БондареваО_ТТИТ2026">
-        <input type="password" id="loginPass" placeholder="Пароль" value="">
-        <div class="modal-actions">
-            <button class="btn-primary" onclick="checkLogin()">Войти</button>
-            <button class="btn-secondary" onclick="closeModal('loginModal')">Отмена</button>
-        </div>
-    </div>
-</div>
-
-<!-- МОДАЛКА РЕДАКТИРОВАНИЯ -->
-<div id="editModal" class="modal">
-    <div class="modal-card">
-        <h2><i class="fas fa-pen"></i> Редактировать видео</h2>
-        <input type="hidden" id="editGroup">
-        <input type="hidden" id="editIndex">
-        <input type="text" id="editTitle" placeholder="Название видео">
-        <input type="url" id="editUrl" placeholder="Ссылка YouTube">
-        <div class="modal-actions">
-            <button class="btn-primary" onclick="saveEditedVideo()">Сохранить</button>
-            <button class="btn-secondary" onclick="closeModal('editModal')">Отмена</button>
-        </div>
-    </div>
-</div>
-
-<!-- АДМИН-ПАНЕЛЬ (скрыта по умолчанию) -->
-<div id="adminDashboard">
-    <div class="admin-container">
-        <div class="admin-header">
-            <h2><i class="fas fa-gear" style="color:#ffb347;"></i> Управление видео</h2>
-            <button class="close-admin" onclick="closeAdmin()">✕ Закрыть</button>
-        </div>
-        <div style="margin-bottom: 20px;">
-            <button class="glow-button" onclick="addNewVideo()" style="background:#ffb347; border:none; padding:14px 28px; border-radius:60px; font-weight:bold; margin-right:12px;"><i class="fas fa-plus"></i> Добавить видео</button>
-        </div>
-        <div id="groupSelector" style="margin-bottom:25px;"></div>
-        <div id="adminVideoContainer" class="admin-edit-area"></div>
-    </div>
-</div>
 
 <!-- ФУТЕР -->
 <footer>
@@ -539,215 +310,159 @@
 </footer>
 
 <script>
-    // --- БАЗА ДАННЫХ (localStorage) ---
-    let videoDB = {
-        'civil-group1': [], 'civil-group2': [], 'civil-group3': [],
-        'wwii-group1': [], 'wwii-group2': [], 'wwii-group3': [], 'wwii-group4': []
-    };
+    (function() {
+        // ---------- БАЗА ВИДЕО (статическая, без админки) ----------
+        const civilWarData = {
+            theme1: [  // 1 этап
+                { group: "454", url: "https://disk.yandex.ru/i/vBxxtQY-UYiDCQ" },
+                { group: "954", url: "https://drive.google.com/file/d/18Ol3nf7b24RuSeppU_nD3ixHaUHImrOU/view?usp=sharing" },
+                { group: "954", url: "https://drive.google.com/file/d/1AEkhSkoFlZZTLhXAc-RBaRvmya2AT3FE/view?usp=sharing" }
+            ],
+            theme2: [  // 2 этап
+                { group: "452", url: "https://drive.google.com/file/d/1S0026QUqzrJjmc3ME_-5vVUM_bgZCKvH/view?usp=sharing" },
+                { group: "754", url: "https://drive.google.com/file/d/1An2vv2SFHvoqwJ74jKHPrGzP5mxAe6qC/view?usp=sharing" },
+                { group: "952", url: "https://drive.google.com/file/d/1nioPbCE9VUG8NYfWNtS0mgxqaigee3q-/view?usp=sharing" }
+            ],
+            theme3: [  // 3 этап
+                { group: "954", url: "https://drive.google.com/file/d/1BH9HgmXi3BNMuBeQWwpE41KMm-4ugF7j/view?usp=sharing" }
+            ]
+        };
 
-    function loadDB() {
-        const stored = localStorage.getItem('ttit_history_v5');
-        if (stored) {
-            videoDB = JSON.parse(stored);
-        } else {
-            // демо-наполнение
-            videoDB = {
-                'civil-group1': [{ title: 'Причины гражданской войны (лекция)', url: 'https://www.youtube.com/embed/dQw4w9WgXcQ' }],
-                'civil-group2': [{ title: 'Колчак и интервенция', url: 'https://www.youtube.com/embed/3JZ_D3ELwOQ' }],
-                'civil-group3': [{ title: 'Врангель и исход из Крыма', url: 'https://www.youtube.com/embed/5Vt7q9r0h' }],
-                'wwii-group1': [{ title: 'Мюнхенский сговор 1938', url: 'https://www.youtube.com/embed/6AvygL9_9Ng' }],
-                'wwii-group2': [{ title: 'Курская дуга: стратегия', url: 'https://www.youtube.com/embed/3gPq1mQIY' }],
-                'wwii-group3': [{ title: 'Томичи на фронтах', url: 'https://www.youtube.com/embed/0Pxy3y_G7c' }],
-                'wwii-group4': [{ title: 'Плакаты войны', url: 'https://www.youtube.com/embed/nzZ2NqW4Y' }]
-            };
+        const wwiiData = {
+            theme1: [  // Тема 1 (Как всё начиналось) — пока пусто, можно добавить позже
+                // { group: "000", url: "https://example.com" }
+            ],
+            theme2: [  // Тема 2 (Этапы ВОВ)
+                // { group: "111", url: "https://example.com" }
+            ],
+            theme3: [  // Тема 3 (Вклад томичей)
+                // { group: "222", url: "https://example.com" }
+            ],
+            theme4: [  // Тема 4 (Культура в годы войны)
+                // { group: "333", url: "https://example.com" }
+            ]
+        };
+
+        // Текущий выбранный семинар ('civil' или 'wwii')
+        let currentSeminar = 'civil';
+
+        // Описания тем для отображения
+        const themeNames = {
+            civil: ['1 этап', '2 этап', '3 этап'],
+            wwii: ['Как всё начиналось', 'Этапы ВОВ', 'Вклад томичей', 'Культура в годы войны']
+        };
+
+        // Элементы интерфейса
+        const selectCivilBtn = document.getElementById('selectCivilBtn');
+        const selectWWIIBtn = document.getElementById('selectWWIIBtn');
+        const themeTabsContainer = document.getElementById('themeTabsContainer');
+        const themePanelsContainer = document.getElementById('themePanelsContainer');
+
+        // Переключение семинара
+        function setActiveSeminar(seminar) {
+            currentSeminar = seminar;
+            // Активная кнопка семинара
+            selectCivilBtn.classList.toggle('active', seminar === 'civil');
+            selectWWIIBtn.classList.toggle('active', seminar === 'wwii');
+            // Перестроить вкладки тем и панели
+            renderThemeTabs();
+            // Активировать первую тему
+            activateTheme(0);
         }
-        renderAllGrids();
-    }
-    function saveDB() {
-        localStorage.setItem('ttit_history_v5', JSON.stringify(videoDB));
-    }
 
-    function renderAllGrids() {
-        for (let group in videoDB) {
-            const grid = document.getElementById('grid-' + group);
-            if (!grid) continue;
-            grid.innerHTML = '';
-            if (videoDB[group].length === 0) {
-                grid.innerHTML = '<div class="placeholder-video"><i class="fas fa-video"></i> Видео пока нет. Войдите в админку, чтобы добавить.</div>';
-            } else {
-                videoDB[group].forEach(v => {
-                    const card = document.createElement('div');
-                    card.className = 'video-card';
-                    card.innerHTML = `
-                        <div class="video-info">
-                            <i class="fas fa-play-circle"></i>
-                            <span class="video-title">${v.title}</span>
-                        </div>
-                        <div class="video-actions">
-                            <a href="#" class="watch-link" onclick="window.open('${v.url}', '_blank'); return false;"><i class="fas fa-eye"></i> Смотреть</a>
-                        </div>
-                    `;
-                    grid.appendChild(card);
-                });
+        // Отрисовка вкладок тем
+        function renderThemeTabs() {
+            const names = themeNames[currentSeminar];
+            let tabsHtml = '';
+            for (let i = 0; i < names.length; i++) {
+                tabsHtml += `<button class="tab-button" data-theme-index="${i}"><i class="fas fa-${i+1}"></i> ${names[i]}</button>`;
             }
-        }
-    }
+            themeTabsContainer.innerHTML = tabsHtml;
 
-    // --- ВКЛАДКИ ---
-    document.querySelectorAll('.tab-button').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const seminar = this.closest('.seminar');
-            seminar.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            const targetId = this.dataset.group;
-            seminar.querySelectorAll('.group-panel').forEach(p => p.classList.remove('active-panel'));
-            document.getElementById(targetId).classList.add('active-panel');
-        });
-    });
-
-    // --- АДМИНКА (логин без сохранения пароля) ---
-    document.getElementById('adminLoginBtn').addEventListener('click', (e) => {
-        e.preventDefault();
-        document.getElementById('loginModal').style.display = 'flex';
-        document.getElementById('loginPass').value = ''; // всегда пустой
-    });
-
-    function closeModal(id) {
-        document.getElementById(id).style.display = 'none';
-    }
-    window.closeModal = closeModal;
-
-    function checkLogin() {
-        const user = document.getElementById('loginUser').value;
-        const pass = document.getElementById('loginPass').value;
-        if (user === 'БондареваО_ТТИТ2026' && pass === 'БондареваQwe101010!') {
-            closeModal('loginModal');
-            openAdminPanel();
-        } else {
-            alert('Неверный логин или пароль');
-        }
-    }
-    window.checkLogin = checkLogin;
-
-    function openAdminPanel() {
-        document.getElementById('adminDashboard').style.display = 'block';
-        renderGroupButtons();
-        showAdminVideos('civil-group1');
-    }
-    function closeAdmin() {
-        document.getElementById('adminDashboard').style.display = 'none';
-    }
-    window.closeAdmin = closeAdmin;
-
-    function renderGroupButtons() {
-        const container = document.getElementById('groupSelector');
-        container.innerHTML = '';
-        Object.keys(videoDB).forEach(g => {
-            const btn = document.createElement('span');
-            btn.className = 'group-badge';
-            btn.innerText = g.replace('civil', 'Гр.в. ').replace('wwii', 'ВОВ ');
-            btn.onclick = () => showAdminVideos(g);
-            container.appendChild(btn);
-        });
-    }
-
-    function showAdminVideos(groupKey) {
-        const container = document.getElementById('adminVideoContainer');
-        container.innerHTML = `<h3 style="margin-bottom:20px; color:#1f2f44;">${groupKey}</h3>`;
-        const listDiv = document.createElement('div');
-        listDiv.id = 'adminSortableList';
-        listDiv.className = 'video-grid';
-        if (!videoDB[groupKey] || videoDB[groupKey].length === 0) {
-            listDiv.innerHTML = '<div class="placeholder-video">Видео нет. Добавьте.</div>';
-        } else {
-            videoDB[groupKey].forEach((v, idx) => {
-                const card = document.createElement('div');
-                card.className = 'video-card';
-                card.setAttribute('data-index', idx);
-                card.innerHTML = `
-                    <div class="video-info">
-                        <i class="fas fa-grip-vertical" style="color:#ffb347; cursor:grab;"></i>
-                        <span class="video-title">${v.title}</span>
-                    </div>
-                    <div class="video-actions">
-                        <button onclick="openEditModal('${groupKey}', ${idx})" style="background:#eef4fc; border:1px solid #ffb347; border-radius:40px; width:46px; height:46px;"><i class="fas fa-pen"></i></button>
-                        <button onclick="deleteVideo('${groupKey}', ${idx})" style="background:#ffe8e8; border:1px solid #ff8a8a; border-radius:40px; width:46px; height:46px;"><i class="fas fa-trash"></i></button>
-                    </div>
-                `;
-                listDiv.appendChild(card);
+            // Добавить обработчики
+            document.querySelectorAll('#themeTabsContainer .tab-button').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    // Убрать active со всех вкладок тем
+                    document.querySelectorAll('#themeTabsContainer .tab-button').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const index = parseInt(this.dataset.themeIndex);
+                    activateTheme(index);
+                });
             });
-        }
-        container.appendChild(listDiv);
-        new Sortable(listDiv, {
-            animation: 250,
-            handle: '.fa-grip-vertical',
-            onEnd: (evt) => {
-                const newOrder = [];
-                const items = evt.target.querySelectorAll('.video-card');
-                items.forEach(item => {
-                    const idx = item.getAttribute('data-index');
-                    newOrder.push(videoDB[groupKey][parseInt(idx)]);
-                });
-                videoDB[groupKey] = newOrder;
-                saveDB();
-                renderAllGrids();
-                showAdminVideos(groupKey);
+
+            // Активировать первую вкладку тем
+            const firstTab = document.querySelector('#themeTabsContainer .tab-button');
+            if (firstTab) {
+                firstTab.classList.add('active');
             }
-        });
-    }
-
-    function addNewVideo() {
-        const group = prompt('Введите ID группы (например civil-group2, wwii-group3):', 'civil-group1');
-        if (!group || !videoDB[group]) { alert('Такой группы нет'); return; }
-        const title = prompt('Название видео:');
-        let url = prompt('Ссылка YouTube:');
-        if (!title || !url) return;
-        if (url.includes('watch?v=')) url = url.replace('watch?v=', 'embed/');
-        else if (url.includes('youtu.be/')) url = url.replace('youtu.be/', 'youtube.com/embed/');
-        videoDB[group].push({ title, url });
-        saveDB();
-        renderAllGrids();
-        showAdminVideos(group);
-    }
-    window.addNewVideo = addNewVideo;
-
-    function openEditModal(group, idx) {
-        document.getElementById('editGroup').value = group;
-        document.getElementById('editIndex').value = idx;
-        document.getElementById('editTitle').value = videoDB[group][idx].title;
-        document.getElementById('editUrl').value = videoDB[group][idx].url;
-        document.getElementById('editModal').style.display = 'flex';
-    }
-    window.openEditModal = openEditModal;
-
-    function saveEditedVideo() {
-        const group = document.getElementById('editGroup').value;
-        const idx = parseInt(document.getElementById('editIndex').value);
-        const newTitle = document.getElementById('editTitle').value;
-        let newUrl = document.getElementById('editUrl').value;
-        if (!newTitle || !newUrl) return;
-        if (newUrl.includes('watch?v=')) newUrl = newUrl.replace('watch?v=', 'embed/');
-        else if (newUrl.includes('youtu.be/')) newUrl = newUrl.replace('youtu.be/', 'youtube.com/embed/');
-        videoDB[group][idx] = { title: newTitle, url: newUrl };
-        saveDB();
-        renderAllGrids();
-        closeModal('editModal');
-        showAdminVideos(group);
-    }
-    window.saveEditedVideo = saveEditedVideo;
-
-    function deleteVideo(group, idx) {
-        if (confirm('Удалить видео?')) {
-            videoDB[group].splice(idx, 1);
-            saveDB();
-            renderAllGrids();
-            showAdminVideos(group);
         }
-    }
-    window.deleteVideo = deleteVideo;
 
-    // Инициализация — просто загружаем данные, админка скрыта
-    loadDB();
+        // Активировать панель темы с номером index
+        function activateTheme(index) {
+            const names = themeNames[currentSeminar];
+            let panelsHtml = '';
+            for (let i = 0; i < names.length; i++) {
+                const activeClass = (i === index) ? 'active-panel' : '';
+                panelsHtml += `<div class="group-panel ${activeClass}" id="theme-panel-${i}">`;
+                panelsHtml += `<h3>${names[i]}</h3>`;
+
+                // Получить данные для этой темы
+                let videos = [];
+                if (currentSeminar === 'civil') {
+                    if (i === 0) videos = civilWarData.theme1;
+                    else if (i === 1) videos = civilWarData.theme2;
+                    else if (i === 2) videos = civilWarData.theme3;
+                } else {
+                    if (i === 0) videos = wwiiData.theme1;
+                    else if (i === 1) videos = wwiiData.theme2;
+                    else if (i === 2) videos = wwiiData.theme3;
+                    else if (i === 3) videos = wwiiData.theme4;
+                }
+
+                // Построить карточки видео
+                if (videos.length === 0) {
+                    panelsHtml += `<div class="placeholder-video"><i class="fas fa-video"></i> Видео пока нет</div>`;
+                } else {
+                    panelsHtml += `<div class="video-grid">`;
+                    videos.forEach(v => {
+                        panelsHtml += `
+                            <div class="video-card">
+                                <div class="video-info">
+                                    <i class="fas fa-play-circle"></i>
+                                    <div>
+                                        <div class="video-title">${currentSeminar === 'civil' ? 'Гражданская война' : 'Вторая мировая война'}</div>
+                                        <div class="video-meta">Тема: ${names[i]} • Группа: ${v.group}</div>
+                                    </div>
+                                </div>
+                                <div class="video-actions">
+                                    <a href="${v.url}" target="_blank" class="watch-link"><i class="fas fa-eye"></i> Посмотреть ролик</a>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    panelsHtml += `</div>`;
+                }
+                panelsHtml += `</div>`;
+            }
+            themePanelsContainer.innerHTML = panelsHtml;
+        }
+
+        // Обработчики кнопок семинаров
+        selectCivilBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            setActiveSeminar('civil');
+        });
+
+        selectWWIIBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            setActiveSeminar('wwii');
+        });
+
+        // Инициализация: показать семинар "Гражданская война", тему 1
+        setActiveSeminar('civil');
+    })();
 </script>
+
 </body>
 </html>
